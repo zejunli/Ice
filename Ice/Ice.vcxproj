@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ICE_PLATFORM_WINDOWS;ICE_BUILD_DLL;ICE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Ice\src\;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -147,6 +147,10 @@
     <ClInclude Include="src\Ice\Application.h" />
     <ClInclude Include="src\Ice\Core.h" />
     <ClInclude Include="src\Ice\EntryPoint.h" />
+    <ClInclude Include="src\Ice\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Ice\Events\Event.h" />
+    <ClInclude Include="src\Ice\Events\KeyEvent.h" />
+    <ClInclude Include="src\Ice\Events\MouseEvent.h" />
     <ClInclude Include="src\Ice\Log.h" />
   </ItemGroup>
   <ItemGroup>

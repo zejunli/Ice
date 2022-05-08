@@ -12,3 +12,6 @@
 	#error ICE only supports windows for now
 
 #endif
+
+// 1 * (2 ^ x)
+#define BIT(x) (1 << x)
