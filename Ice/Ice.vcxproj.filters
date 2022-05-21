@@ -10,6 +10,9 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ice.h" />
@@ -34,6 +37,12 @@
     <ClInclude Include="src\Ice\Events\MouseEvent.h">
       <Filter>Ice\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ice\Layer.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\LayerStack.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
     <ClInclude Include="src\Ice\Log.h">
       <Filter>Ice</Filter>
     </ClInclude>
@@ -41,7 +50,7 @@
       <Filter>Ice</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
-      <Filter>Platform</Filter>
+      <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\icepch.h" />
   </ItemGroup>
@@ -49,11 +58,17 @@
     <ClCompile Include="src\Ice\Application.cpp">
       <Filter>Ice</Filter>
     </ClCompile>
+    <ClCompile Include="src\Ice\Layer.cpp">
+      <Filter>Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ice\LayerStack.cpp">
+      <Filter>Ice</Filter>
+    </ClCompile>
     <ClCompile Include="src\Ice\Log.cpp">
       <Filter>Ice</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
-      <Filter>Platform</Filter>
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\icepch.cpp" />
   </ItemGroup>

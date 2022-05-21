@@ -2,6 +2,7 @@
 
 // For use by Ice apps
 #include "Ice/Application.h"
+#include "Ice/Layer.h"
 #include "Ice/Log.h"
 
 
