@@ -1,6 +1,9 @@
+#include "icepch.h"
 #include "Application.h"
 #include "Ice/Events/ApplicationEvent.h"
 #include "Ice/Log.h"
+
+#include <GLFW/glfw3.h>
 
 using namespace std;
 
@@ -8,30 +11,25 @@ namespace Ice
 {
 	Application::Application()
 	{
-
+		m_Window = std::unique_ptr<Window>(Window::Create());
 	}
+
 
 	Application::~Application()
 	{
 			
 	}
 
+
 	void Application::Run()
 	{
-		WindowResizeEvent e(200, 100);
-
-		if (e.IsInCategory(EventCategoryApplication))
+		
+		while (m_Running)
 		{
-			ICE_TRACE(e);
+			glClearColor(1, 0, 1, 1);
+			glClear(GL_COLOR_BUFFER_BIT);
+			m_Window->OnUpdate();
 		}
-
-		if (e.IsInCategory(EventCategoryInput))
-		{
-			ICE_TRACE(e);
-		}
-
-
-		while (true);
 	}
 
 }

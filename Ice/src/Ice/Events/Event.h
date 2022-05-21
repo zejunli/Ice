@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Ice/Core.h"
-#include <string>
-#include <functional>
+#include "icepch.h"
+
 
 namespace Ice {
 

@@ -4,6 +4,12 @@
     <Filter Include="Ice">
       <UniqueIdentifier>{96F6870B-0200-887C-8B7B-9E7CF783937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ice\Events">
+      <UniqueIdentifier>{BA9D3F6A-A655-81B7-0F5D-5A13FB331CA8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ice.h" />
@@ -16,13 +22,28 @@
     <ClInclude Include="src\Ice\EntryPoint.h">
       <Filter>Ice</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ice\Events\ApplicationEvent.h">
+      <Filter>Ice\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\Events\Event.h">
+      <Filter>Ice\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\Events\KeyEvent.h">
+      <Filter>Ice\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\Events\MouseEvent.h">
+      <Filter>Ice\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Ice\Log.h">
       <Filter>Ice</Filter>
     </ClInclude>
-    <ClInclude Include="src\Ice\Events\Event.h" />
-    <ClInclude Include="src\Ice\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\Ice\Events\KeyEvent.h" />
-    <ClInclude Include="src\Ice\Events\MouseEvent.h" />
+    <ClInclude Include="src\Ice\Window.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\icepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ice\Application.cpp">
@@ -31,5 +52,9 @@
     <ClCompile Include="src\Ice\Log.cpp">
       <Filter>Ice</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\icepch.cpp" />
   </ItemGroup>
 </Project>

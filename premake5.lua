@@ -10,6 +10,15 @@ workspace "Ice"
 
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+
+
+-- Include directories relative to root folder
+IncludeDir = {}
+IncludeDir["GLFW"] = "Ice/vendor/GLFW/include"
+
+-- include premake5.lua of GLFW
+include "Ice/vendor/GLFW"
+
 	
 project "Ice"
 	location "Ice"
@@ -18,6 +27,9 @@ project "Ice"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "icepch.h"
+	pchsource "Ice/src/icepch.cpp"
 	
 	files
 	{
@@ -28,7 +40,15 @@ project "Ice"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
