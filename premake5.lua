@@ -15,9 +15,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder
 IncludeDir = {}
 IncludeDir["GLFW"] = "Ice/vendor/GLFW/include"
+IncludeDir["Glad"] = "Ice/vendor/Glad/include"
 
 -- include premake5.lua of GLFW
 include "Ice/vendor/GLFW"
+include "Ice/vendor/Glad"
 
 	
 project "Ice"
@@ -41,13 +43,15 @@ project "Ice"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -59,7 +63,8 @@ project "Ice"
 		defines
 		{
 			"ICE_PLATFORM_WINDOWS",
-			"ICE_BUILD_DLL"
+			"ICE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

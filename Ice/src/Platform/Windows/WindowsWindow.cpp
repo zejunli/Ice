@@ -7,6 +7,8 @@
 #include "Ice/Events/KeyEvent.h"
 #include "Ice/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+
 namespace Ice
 {
 	static bool s_GLFWInitialized = false;
@@ -47,6 +49,11 @@ namespace Ice
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+
+		// init glad
+		int success = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		ICE_CORE_ASSERT(success, "Failed to initialize GLAD!");
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

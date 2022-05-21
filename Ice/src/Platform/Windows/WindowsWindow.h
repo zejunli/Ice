@@ -1,6 +1,5 @@
 #pragma once
 
-#include "icepch.h"
 #include "Ice/Window.h"
 #include <GLFW/glfw3.h>
 

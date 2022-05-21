@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Ice/Log.h"
 
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 using namespace std;
@@ -14,6 +15,7 @@ namespace Ice
 	{
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
 	}
 
 
