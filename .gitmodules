@@ -4,3 +4,6 @@
 [submodule "Ice/vendor/GLFW"]
 	path = Ice/vendor/GLFW
 	url = https://github.com/glfw/glfws
+[submodule "Ice/vendor/imgui"]
+	path = Ice/vendor/imgui
+	url = https://github.com/TheCherno/imgui.git
