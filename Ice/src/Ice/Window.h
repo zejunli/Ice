@@ -5,7 +5,6 @@
 #include "Ice/Core.h"
 #include "Ice/Events/Event.h"
 
-
 namespace Ice
 {	
 
@@ -42,6 +41,6 @@ namespace Ice
 		virtual bool IsVSync() const = 0;
 
 		static Window* Create(const WindowProps& props = WindowProps());
-	
+		
 	};
 }

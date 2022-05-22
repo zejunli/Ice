@@ -1,15 +1,16 @@
 #include "icepch.h"
 #include "ImGuiLayer.h"
 #include "imgui.h"
-#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
-#include "Platform/OpenGL/ImGuiOpenGLRenderer_loader.h"
-//#include "Platform/OpenGL/imgui_impl_glfw.h"
 
+#include "Platform/OpenGL/imgui_impl_opengl3.h"
+#include "Platform/OpenGL/imgui_impl_glfw.h"
 #include <GLFW/glfw3.h>
 #include "Ice/Application.h"
+#include "Platform/Windows/WindowsWindow.h"
 
 namespace Ice
-{
+{	
+
 	ImGuiLayer::ImGuiLayer() : Layer("ImGuiLayer")
 	{
 
@@ -123,7 +124,8 @@ namespace Ice
 		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
 		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
 		
-		ImGui_ImplOpenGL3_Init("#version 410");
+
+		//ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
 	void ImGuiLayer::OnDetach()
@@ -135,11 +137,10 @@ namespace Ice
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
-		io.DisplaySize = ImVec2(1280, 720);
-		
+		io.DisplaySize = ImVec2(app.GetWindow()->GetWidth(), app.GetWindow()->GetHeight());
 		
 		ImGui_ImplOpenGL3_NewFrame();
-		//ImGui_ImplGlfw_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
 		float time = (float)glfwGetTime();

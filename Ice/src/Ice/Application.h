@@ -11,7 +11,6 @@
 namespace Ice
 {
 
-
 	class ICE_API Application
 	{
 	public:
@@ -26,7 +25,7 @@ namespace Ice
 		void PushOverlay(Layer* overlay);
 
 		inline static Application& Get() { return *s_Instance; }
-		inline Window& GetWindow() { return *m_Window; }
+		inline Window* GetWindow() { return m_Window.get(); }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;

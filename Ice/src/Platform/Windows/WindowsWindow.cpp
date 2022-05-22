@@ -8,6 +8,11 @@
 #include "Ice/Events/MouseEvent.h"
 
 #include <glad/glad.h>
+#include "imgui.h"
+#include "Platform/OpenGL/imgui_impl_glfw.h"
+#include "Platform/OpenGL/imgui_impl_opengl3.h"
+
+
 
 namespace Ice
 {
@@ -17,6 +22,7 @@ namespace Ice
 	{
 		ICE_CORE_ERROR("GLFW ERROR: ({0}): {1}", error, description);
 	}
+
 
 	Window* Window::Create(const WindowProps& props)
 	{
@@ -56,6 +62,13 @@ namespace Ice
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
+		
+		ImGui::CreateContext();
+		ImGuiIO& io = ImGui::GetIO();
+		// Setup Platform/Renderer bindings
+		ImGui_ImplGlfw_InitForOpenGL(m_Window, true);
+		ImGui_ImplOpenGL3_Init("#version 410");
+		
 
 		// window resize
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
@@ -173,7 +186,4 @@ namespace Ice
 	{
 		return m_Data.VSync;
 	}
-
-
-
 }
