@@ -4,6 +4,7 @@
 #include "Ice/Application.h"
 #include "Ice/Layer.h"
 #include "Ice/Log.h"
+#include "Ice/ImGui/ImGuiLayer.h"
 
 
 // ---- Entry Point ----

@@ -7,6 +7,9 @@
     <Filter Include="Ice\Events">
       <UniqueIdentifier>{BA9D3F6A-A655-81B7-0F5D-5A13FB331CA8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Ice\ImGui">
+      <UniqueIdentifier>{4084D058-ACEE-84CF-F52C-367561D66224}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
@@ -37,6 +40,9 @@
     <ClInclude Include="src\Ice\Events\MouseEvent.h">
       <Filter>Ice\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ice\ImGui\ImGuiLayer.h">
+      <Filter>Ice\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Ice\Layer.h">
       <Filter>Ice</Filter>
     </ClInclude>
@@ -53,10 +59,17 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\icepch.h" />
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="vendor\imgui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ice\Application.cpp">
       <Filter>Ice</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ice\ImGui\ImGuiLayer.cpp">
+      <Filter>Ice\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Ice\Layer.cpp">
       <Filter>Ice</Filter>
@@ -71,5 +84,7 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\icepch.cpp" />
+    <ClCompile Include="vendor\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

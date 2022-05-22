@@ -7,7 +7,7 @@ public:
 
 	void OnUpdate() override
 	{
-		ICE_INFO("ExampleLayer::Update");
+		//ICE_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Ice::Event& e) override
@@ -22,8 +22,9 @@ class Sandbox : public Ice::Application
 {
 public:
 	Sandbox()
-	{
-		PushLayer(new ExampleLayer());
+	{	
+		//PushLayer(new ExampleLayer());
+		PushOverlay(new Ice::ImGuiLayer());
 	}
 
 	~Sandbox()

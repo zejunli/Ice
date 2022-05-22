@@ -16,10 +16,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Ice/vendor/GLFW/include"
 IncludeDir["Glad"] = "Ice/vendor/Glad/include"
+IncludeDir["imgui"] = "Ice/vendor/imgui"
 
 -- include premake5.lua of GLFW
 include "Ice/vendor/GLFW"
 include "Ice/vendor/Glad"
+include "Ice/vendor/imgui"
 
 	
 project "Ice"
@@ -44,7 +46,8 @@ project "Ice"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.imgui}"
 	}
 
 
@@ -52,6 +55,7 @@ project "Ice"
 	{
 		"GLFW",
 		"Glad",
+		"imgui",
 		"opengl32.lib"
 	}
 
