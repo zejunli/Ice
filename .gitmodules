@@ -7,3 +7,6 @@
 [submodule "Ice/vendor/imgui"]
 	path = Ice/vendor/imgui
 	url = https://github.com/TheCherno/imgui.git
+[submodule "Ice/vendor/glm"]
+	path = Ice/vendor/glm
+	url = https://github.com/g-truc/glm.git

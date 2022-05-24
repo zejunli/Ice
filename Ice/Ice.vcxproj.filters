@@ -46,6 +46,12 @@
     <ClInclude Include="src\Ice\ImGui\ImGuiLayer.h">
       <Filter>Ice\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ice\Input.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\KeyCodes.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
     <ClInclude Include="src\Ice\Layer.h">
       <Filter>Ice</Filter>
     </ClInclude>
@@ -53,6 +59,9 @@
       <Filter>Ice</Filter>
     </ClInclude>
     <ClInclude Include="src\Ice\Log.h">
+      <Filter>Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ice\MouseButtonCodes.h">
       <Filter>Ice</Filter>
     </ClInclude>
     <ClInclude Include="src\Ice\Window.h">
@@ -67,12 +76,13 @@
     <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\icepch.h" />
-    <ClInclude Include="src\Ice\Input.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ice\Application.cpp">
@@ -96,10 +106,12 @@
     <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\icepch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>

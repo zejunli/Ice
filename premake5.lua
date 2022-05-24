@@ -18,13 +18,13 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Ice/vendor/GLFW/include"
 IncludeDir["Glad"] = "Ice/vendor/Glad/include"
 IncludeDir["imgui"] = "Ice/vendor/imgui"
+IncludeDir["glm"] = "Ice/vendor/glm"
+
 
 -- include premake5.lua of GLFW
 include "Ice/vendor/GLFW"
 include "Ice/vendor/Glad"
 include "Ice/vendor/imgui"
-
-
 
 	
 project "Ice"
@@ -50,7 +50,8 @@ project "Ice"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.imgui}"
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}"
 	}
 
 
@@ -114,7 +115,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Ice/vendor/spdlog/include",
-		"Ice/src"
+		"Ice/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links

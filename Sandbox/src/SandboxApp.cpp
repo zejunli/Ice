@@ -1,5 +1,6 @@
 #include <Ice.h>
 
+
 class ExampleLayer : public Ice::Layer
 {
 public:
@@ -12,7 +13,10 @@ public:
 
 	void OnEvent(Ice::Event& e) override
 	{
-		ICE_TRACE("{0}", e);
+		/*ICE_INFO("Example!!!");
+
+		if (Ice::Input::IsKeyPressed(ICE_KEY_TAB))
+			ICE_TRACE("It is pressed!");*/
 	}
 };
 
@@ -23,7 +27,7 @@ class Sandbox : public Ice::Application
 public:
 	Sandbox()
 	{	
-		//PushLayer(new ExampleLayer());
+		PushLayer(new ExampleLayer());
 		PushOverlay(new Ice::ImGuiLayer());
 	}
 
