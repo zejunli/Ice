@@ -22,10 +22,11 @@ namespace Ice {
 	class ICE_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(int keycode, int repeatCount)
-			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
+		KeyPressedEvent(int keycode, int repeatCount, int mods)
+			: KeyEvent(keycode), m_RepeatCount(repeatCount), m_Mods(mods) {}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }
+		inline int GetMods() const { return m_Mods; }
 		
 		std::string ToString() const override
 		{
@@ -37,6 +38,7 @@ namespace Ice {
 		EVENT_CLASS_TYPE(KeyPressed)
 	private:
 		int m_RepeatCount;
+		int m_Mods;
 	};
 
 	
@@ -54,6 +56,23 @@ namespace Ice {
 		}
 
 		EVENT_CLASS_TYPE(KeyReleased)
+	};
+
+
+	class ICE_API KeyTypedEvent : public KeyEvent
+	{
+	public:
+		KeyTypedEvent(int keycode)
+			: KeyEvent(keycode) {}
+
+		std::string ToString() const override
+		{
+			std::stringstream ss;
+			ss << "KeyTypedEvent: " << m_KeyCode;
+			return ss.str();
+		}
+
+		EVENT_CLASS_TYPE(KeyTyped)
 	};
 
 

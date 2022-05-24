@@ -25,8 +25,8 @@ namespace Ice
 		bool OnMouseScrolledEvent(MouseScrolledEvent& event);
 		bool OnKeyPressedEvent(KeyPressedEvent& event);
 		bool OnKeyReleasedEvent(KeyReleasedEvent& event);
-		//bool OnKeyTypedEvent(KeyTypedEvent& event);
-		bool onWindowResizedEvent(WindowResizeEvent& event);
+		bool OnKeyTypedEvent(KeyTypedEvent& event);
+		bool OnWindowResizeEvent(WindowResizeEvent& event);
 
 	private:
 		float m_Time = 0.0f;

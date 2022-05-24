@@ -10,7 +10,7 @@
 #include <glad/glad.h>
 #include "imgui.h"
 #include "Platform/OpenGL/imgui_impl_glfw.h"
-#include "Platform/OpenGL/imgui_impl_opengl3.h"
+#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 
 
 
@@ -63,12 +63,6 @@ namespace Ice
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 		
-		ImGui::CreateContext();
-		ImGuiIO& io = ImGui::GetIO();
-		// Setup Platform/Renderer bindings
-		ImGui_ImplGlfw_InitForOpenGL(m_Window, true);
-		ImGui_ImplOpenGL3_Init("#version 410");
-		
 
 		// window resize
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
@@ -96,7 +90,7 @@ namespace Ice
 				{
 					case GLFW_PRESS:
 					{
-						KeyPressedEvent event(key, 0);
+						KeyPressedEvent event(key, 0, mods);
 						data.EventCallback(event);
 						break;
 					}
@@ -108,11 +102,20 @@ namespace Ice
 					}
 					case GLFW_REPEAT:
 					{
-						KeyPressedEvent event(key, 1);
+						KeyPressedEvent event(key, 1, mods);
 						data.EventCallback(event);
 						break;
 					}
 				}
+			});
+
+		
+		// key typed event
+		glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keycode)
+			{
+				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+				KeyTypedEvent event(keycode);
+				data.EventCallback(event);
 			});
 
 
