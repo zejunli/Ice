@@ -1,5 +1,6 @@
 workspace "Ice"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -22,6 +23,8 @@ IncludeDir["imgui"] = "Ice/vendor/imgui"
 include "Ice/vendor/GLFW"
 include "Ice/vendor/Glad"
 include "Ice/vendor/imgui"
+
+
 
 	
 project "Ice"
@@ -73,7 +76,7 @@ project "Ice"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	
