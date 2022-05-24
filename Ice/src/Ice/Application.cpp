@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "Input.h"
+
 using namespace std;
 
 namespace Ice 
@@ -67,6 +69,9 @@ namespace Ice
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			auto [x, y] = Input::GetMousePosition();
+			ICE_CORE_INFO("Mouse: ({0}, {1})", x, y);
 
 			m_Window->OnUpdate();
 		}
