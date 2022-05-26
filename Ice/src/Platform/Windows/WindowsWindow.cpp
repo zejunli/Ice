@@ -8,9 +8,6 @@
 #include "Ice/Events/MouseEvent.h"
 
 #include <glad/glad.h>
-#include "imgui.h"
-#include "Platform/OpenGL/imgui_impl_glfw.h"
-#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 
 
 

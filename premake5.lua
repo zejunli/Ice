@@ -118,6 +118,7 @@ project "Sandbox"
 	{
 		"Ice/vendor/spdlog/include",
 		"Ice/src",
+		"Ice/vendor",
 		"%{IncludeDir.glm}"
 	}
 

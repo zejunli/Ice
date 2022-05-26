@@ -5,6 +5,7 @@
 #include "Ice/Events/ApplicationEvent.h"
 #include "Window.h"
 #include "Ice/LayerStack.h"
+#include "Ice/ImGui/ImGuiLayer.h"
 
 
 
@@ -29,9 +30,11 @@ namespace Ice
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 
 		LayerStack m_LayerStack;
+
 
 
 	private:

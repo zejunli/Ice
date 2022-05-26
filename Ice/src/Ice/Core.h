@@ -14,6 +14,11 @@
 #endif
 
 
+#ifdef ICE_DEBUG
+	#define ICE_ENABLE_ASSERT
+#endif
+
+
 #ifdef ICE_ENABLE_ASSERT
 	#define ICE_CORE_ASSERT(x, ...) { if (!(x)) { ICE_CORE_ERROR("Assertion Failed at: {0}: ", __VA_ARGS__); __debugbreak(); } }
 	#define ICE_ASSERT(x, ...) { if (!(x)) { ICE_ERROR("Assertion Failed at {0}: ", __VA_ARGS__); __debugbreak(); } }

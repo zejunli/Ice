@@ -168,9 +168,6 @@
     <ClInclude Include="src\Ice\Log.h" />
     <ClInclude Include="src\Ice\MouseButtonCodes.h" />
     <ClInclude Include="src\Ice\Window.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer_loader.h" />
-    <ClInclude Include="src\Platform\OpenGL\imgui_impl_glfw.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\icepch.h" />
@@ -592,12 +589,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ice\Application.cpp" />
+    <ClCompile Include="src\Ice\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Ice\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Ice\Layer.cpp" />
     <ClCompile Include="src\Ice\LayerStack.cpp" />
     <ClCompile Include="src\Ice\Log.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\imgui_impl_glfw.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\icepch.cpp">
