@@ -1,12 +1,15 @@
 #pragma once
 
 #ifdef ICE_PLATFORM_WINDOWS
+#if ICE_DYNAMIC_LINK
 	#ifdef ICE_BUILD_DLL
 		#define ICE_API __declspec(dllexport)
 	#else
 		#define ICE_API __declspec(dllimport)
 	#endif
-
+#else
+	#define ICE_API
+#endif
 
 #else
 	#error ICE only supports windows for now
