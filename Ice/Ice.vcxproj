@@ -156,9 +156,11 @@
     <ClInclude Include="src\Ice\Log.h" />
     <ClInclude Include="src\Ice\MouseButtonCodes.h" />
     <ClInclude Include="src\Ice\Window.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\icepch.h" />
+    <ClInclude Include="src\Ice\Renderer\GraphicsContext.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -582,6 +584,7 @@
     <ClCompile Include="src\Ice\Layer.cpp" />
     <ClCompile Include="src\Ice\LayerStack.cpp" />
     <ClCompile Include="src\Ice\Log.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\icepch.cpp">

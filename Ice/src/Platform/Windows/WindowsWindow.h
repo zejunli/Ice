@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Ice/Window.h"
+#include "Ice/Renderer/GraphicsContext.h"
+
 #include <GLFW/glfw3.h>
 
 
@@ -29,6 +31,7 @@ namespace Ice
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{

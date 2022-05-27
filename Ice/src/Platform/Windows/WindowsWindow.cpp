@@ -7,7 +7,7 @@
 #include "Ice/Events/KeyEvent.h"
 #include "Ice/Events/MouseEvent.h"
 
-#include <glad/glad.h>
+#include "Platform/OpenGL/OpenGLContext.h"
 
 
 
@@ -49,13 +49,10 @@ namespace Ice
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}
-
+		
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-
-		// init glad
-		int success = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ICE_CORE_ASSERT(success, "Failed to initialize GLAD!");
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
 
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
@@ -167,7 +164,7 @@ namespace Ice
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffer();
 	}
 
 
