@@ -18,7 +18,11 @@ namespace Ice
 		// init glad
 		int success = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		ICE_CORE_ASSERT(success, "Failed to initialize GLAD!");
-
+		
+		ICE_CORE_INFO("OpenGL Info: ");
+		ICE_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		ICE_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		ICE_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
 	}
 
 
