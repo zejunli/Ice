@@ -1,2 +1,4 @@
 # Ice
-Ice Engine
+Game Engine code Ice.
+
+Getting myself ready for implementing the Renderer.
